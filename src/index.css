@@ -84,7 +84,19 @@ video {
   border: 0;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background: black;
-  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.app {
+  text-align: center;
+  margin: 1em;
+}
+.app img {
+  max-height: 70px;
+  margin-bottom: 5em;
 }

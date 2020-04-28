@@ -1,9 +1,13 @@
 import React from 'react';
+import Logo from './images/Raisely.png';
+import illustration from './images/illustration.svg';
+import Header from './components/Header';
 
 function App() {
   return (
-    <div>
-      <h1>Evergreen</h1>
+    <div className="app">
+      <img src={Logo} alt="raisely Logo" />
+      <Header />
     </div>
   );
 }
