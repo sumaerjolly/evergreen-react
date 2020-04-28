@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import illustration from '../images/illustration.svg';
+import { generateMedia } from 'styled-media-query';
 
 function Header() {
   return (
@@ -31,38 +32,71 @@ function Header() {
 
 export default Header;
 
+// Media Queries
+
+const customMedia = generateMedia({
+  tablet: '960px'
+});
+
+// styling
+
 const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 5rem;
-  align-content: center;
-  flex-direction: column;
-  justify-content: center;
+  ${customMedia.lessThan('tablet')`
+      grid-template-columns: 1fr;
+      grid-gap: 0.5rem;
+      grid-template-areas: 
+      "top"
+      "bottom";
+  `}
 
   .left {
     height: 60vh;
     padding: 1em;
     text-align: left;
+    margin-bottom: 2rem;
+    ${customMedia.lessThan('tablet')`
+         grid-area: bottom;
+  `}
 
     h1 {
       font-weight: 900;
       font-size: 4rem;
       margin-bottom: 2rem;
+      ${customMedia.lessThan('tablet')`
+         text-align: center;
+         font-size: 2.5rem;
+  `}
     }
 
     p {
       font-weight: 400;
-      font-weight: 2rem;
+      font-size: 1.1rem;
+      overflow: hidden;
+      ${customMedia.lessThan('tablet')`
+         text-align: center;
+         font-size: 1rem;
+  `}
     }
   }
 
   .right {
-    height: 60vh;
+    max-height: 60vh;
+    ${customMedia.lessThan('tablet')`
+         grid-area: top;
+         display: flex;
+         justify-content: center;
+  `}
   }
 
   .right img {
     display: block;
     max-height: 60vh;
     max-width: 100%;
+    ${customMedia.lessThan('tablet')`
+        max-width: 70%;
+  `}
   }
 `;
