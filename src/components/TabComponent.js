@@ -1,5 +1,9 @@
 import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import TabContentOne from './TabContentOne';
+import TabContentTwo from './TabContentTwo';
+import TabContentThree from './TabContentThree';
+import TabContentFour from './TabContentFour';
 
 function TabComponent() {
   return (
@@ -13,16 +17,16 @@ function TabComponent() {
         </TabList>
 
         <TabPanel>
-          <h2>Any content 1</h2>
+          <TabContentOne />
         </TabPanel>
         <TabPanel>
-          <h2>Any content 2</h2>
+          <TabContentTwo />
         </TabPanel>
         <TabPanel>
-          <h2>Any content 3</h2>
+          <TabContentThree />
         </TabPanel>
         <TabPanel>
-          <h2>Any content 4</h2>
+          <TabContentFour />
         </TabPanel>
       </Tabs>
     </div>

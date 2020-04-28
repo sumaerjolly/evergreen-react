@@ -54,7 +54,7 @@ const Container = styled.div`
 
   .left {
     height: 60vh;
-    padding: 1em;
+    padding: 2rem;
     text-align: left;
     margin-bottom: 2rem;
     ${customMedia.lessThan('tablet')`
