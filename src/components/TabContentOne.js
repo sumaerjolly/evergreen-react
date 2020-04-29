@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import Img from '../images/tasks.svg';
+import { generateMedia } from 'styled-media-query';
 
 function TabContentOne() {
   return (
     <TabContainer>
       <div className="container">
         <div className="tab-content">
-          <div>
+          <div className="content">
             <span className="title">
               Why would you be a good fit for the Customer Success Engineer
               role?
@@ -30,9 +31,21 @@ function TabContentOne() {
 }
 export default TabContentOne;
 
+// media queries
+
+const customMedia = generateMedia({
+  tablet: '960px'
+});
+
+// styling
+
 const TabContainer = styled.div`
   .container {
     margin: 0 10%;
+  }
+
+  .content {
+    padding-bottom: 2rem;
   }
 
   .tab-content {
@@ -44,20 +57,45 @@ const TabContainer = styled.div`
     padding: 2.5rem;
     max-height: 500px;
     // overflow: hidden;
+    ${customMedia.lessThan('tablet')`
+      grid-template-columns: 100%;
+      text-align: center;
+      padding-left: 0;
+      padding-right: 0;
+      grid-gap: 0;
+      grid-template-areas: 
+      "top"
+      "bottom"
+  `}
   }
 
   .tab-content img {
     display: block;
     max-height: 500px;
     max-width: 100%;
+    ${customMedia.lessThan('tablet')`
+      padding:0;
+      margin:0;
+      grid-area: top
+     
+  `}
   }
 
   .title {
     margin-top: 2rem;
+    ${customMedia.lessThan('tablet')`
+     font-size: 1.5rem;
+  `}
   }
 
   .answer {
     font-size: 1.5rem;
     margin-top: 5rem;
+
+    ${customMedia.lessThan('tablet')`
+     font-size: 1rem;
+     margin-top: 2rem;
+     
+  `}
   }
 `;
