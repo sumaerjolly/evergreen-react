@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Img from '../images/tasks.svg';
+import Img from '../images/third-tab.svg';
 import { generateMedia } from 'styled-media-query';
 
 function TabContentThree() {
@@ -75,9 +75,8 @@ const TabContainer = styled.div`
     max-width: 100%;
     ${customMedia.lessThan('tablet')`
       padding:0;
-      margin-bottom:2rem;
-      grid-area: top
-     
+      grid-area: top;
+      margin: 0;
   `}
   }
 
@@ -85,6 +84,7 @@ const TabContainer = styled.div`
     margin-top: 2rem;
     ${customMedia.lessThan('tablet')`
      font-size: 1.5rem;
+     margin-top: 0.5rem;
   `}
   }
 
